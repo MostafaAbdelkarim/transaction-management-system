@@ -69,7 +69,7 @@ npm install
 
 - Clone the repository:
   ```bash
-  git clone <repository-url>
+  git clone https://github.com/MostafaAbdelkarim/transaction-management-system.git
   ```
 - Configure the datasource properties in your .env file.
 - Run the application:
