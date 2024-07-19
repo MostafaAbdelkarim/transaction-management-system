@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "886ef7c1-e926-4461-ae4d-8ae20a695d32",
+		"name": "Pemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33506345"
+	},
+	"item": [
+		{
+			"name": "Post transaction webhook one",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "processor-one",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"2035ed99-38ab-4a42-8125-fcbd906dba7a\",\n    \"mcc\": \"5734\",\n    \"rrn\": \"060400875949\",\n    \"moto\": false,\n    \"stan\": \"875949\",\n    \"card_id\": \"21407f60-ff6d-40b9-9798-3c77496982f6\",\n    \"network\": \"MASTERCARD\",\n    \"user_id\": \"7398d3a1-cf56-469b-ade8-cb86263560b2\",\n    \"fallback\": false,\n    \"recurring\": false,\n    \"card_entry\": \"Unknown\",\n    \"account_id1\": \"pemo27105551\",\n    \"acquirer_id\": \"019517\",\n    \"fee_details\": [],\n    \"merchant_id\": \"DPBF70N6PGMGOEZ\",\n    \"pin_present\": false,\n    \"status_code\": \"0000\",\n    \"terminal_id\": \"LUQC7TSF\",\n    \"is_cancelled\": \"NO\",\n    \"message_type\": \"AUTHORIZATION\",\n    \"merchant_city\": \"+18773574498\",\n    \"merchant_name\": \"SP SOFTWARESTORE\",\n    \"billing_amount\": 2425,\n    \"clearing_count\": 1,\n    \"reversal_count\": 0,\n    \"is_cash_advance\": false,\n    \"pos_environment\": \"E-Commerce\",\n    \"auth_id_response\": \"500512\",\n    \"billing_currency\": \"EGP\",\n    \"card_expiry_date\": \"112026\",\n    \"merchant_country\": \"USA\",\n    \"transaction_type\": \"PURCHASE\",\n    \"card_last4_digits\": \"3014\",\n    \"card_first6_digits\": \"53621404\",\n    \"date_time_acquirer\": \"2024-06-04T01:17:11.000Z\",\n    \"status_description\": \"Transaction approved\",\n    \"transaction_amount\": 2425,\n    \"transaction_currency\": \"AED\",\n    \"transaction_timestamp\": \"2024-06-04T08:27:44.410Z\",\n    \"billing_amount_account\": 245,\n    \"network_transaction_id\": \"MCBZQEZNR0604\",\n    \"transmission_date_time\": \"2024-06-04T08:17:11.000Z\",\n    \"conversion_rate_billing\": \"61000000\",\n    \"incremental_transaction\": false,\n    \"installment_transaction\": false,\n    \"transaction_description\": \"Purchase\",\n    \"billing_currency_account\": \"AED\",\n    \"conversion_rate_billing_account\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/transactions/first",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions",
+						"first"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post transaction webhook two",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "processor-two",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"7caacd90-73f8-4e47-bd1f-9d8d89458ef9\",\n    \"type\": \"ACCOUNT_TRANSACTION_CREATED\",\n    \"transaction\": {\n        \"id\": \"f3dbd518-87da-40ea-b3fb-522cba86afa6\",\n        \"type\": \"CARD_MASTERCARD_E_COMMERCE\",\n        \"dr_cr\": \"DEBIT\",\n        \"amount\": \"3124\",\n        \"status\": \"PENDING\",\n        \"details\": {\n            \"oif\": \"52\",\n            \"token\": \"513409343\",\n            \"network\": \"MC\",\n            \"oif_vat\": \"8\",\n            \"vat_rate\": \"0.15\",\n            \"scheme_mcc\": \"9399\",\n            \"tx_fx_rate\": \"1.021333\",\n            \"paymentology_pid\": \"3\",\n            \"paymentology_tid\": \"2465530403729673400\",\n            \"principal_amount\": \"3064\",\n            \"scheme_tx_amount\": \"3000\",\n            \"scheme_acceptor_id\": \"900100\",\n            \"scheme_terminal_id\": \"00045560\",\n            \"scheme_tx_currency\": \"784\",\n            \"fast_message_log_id\": \"7caacd90-73f8-4e47-bd1f-9d8d89458ef9\",\n            \"scheme_acceptor_city\": \"Dubai\",\n            \"scheme_acceptor_name\": \"SmartDXBGov-RTA\",\n            \"scheme_tx_local_time\": \"1002144400\",\n            \"paymentology_auth_rid\": \"167726\",\n            \"scheme_billing_amount\": \"3064\",\n            \"scheme_billing_fx_rate\": \"1.021333\",\n            \"scheme_acceptor_country\": \"ARE\",\n            \"scheme_billing_currency\": \"682\",\n            \"scheme_settlement_amount\": \"817\",\n            \"scheme_transmission_time\": \"2023-10-02T14:44:00Z\",\n            \"scheme_settlement_fx_rate\": \"0.2723333\",\n            \"scheme_settlement_currency\": \"840\",\n            \"scheme_retrieval_reference_number\": \"231002560747\",\n            \"scheme_systems_trace_audit_number\": \"673400\"\n        },\n        \"reference\": \"2465530403729673400\",\n        \"account_id\": \"a3c2a78b-587a-4052-a354-47bea047d12c\",\n        \"created_at\": \"2023-10-02T14:44:01.790772Z\",\n        \"release_date\": \"2023-10-16T23:59:59Z\",\n        \"scheme_merchant_id\": \"900100\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/transactions/two",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"two"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List transactions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:3000/transactions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

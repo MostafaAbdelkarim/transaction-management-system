@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package transaction;
+
+service TransactionsService {
+    rpc UpsertTransaction (UpsertTransactionDto) returns (Transaction) {}
+    rpc QueryTransactions (stream PaginationDto) returns (stream Transactions) {}
+}
+
+message PaginationDto {
+    string processorId = 1;
+    int32 page = 2;
+    int32 skip = 3;
+}
+
+message Transactions {
+    repeated Transaction transactions = 1;
+}
+
+message Transaction {
+    string id = 1;
+    string processorId = 2;
+    string accountId = 3;
+    float amount = 4;
+    string status = 5;
+    string currency = 6;
+    int32 cardLimit = 7;
+    repeated TransactionDetails transactionDetails = 8;
+}
+
+message UpsertTransactionDto {
+    string id = 1;
+    string processorId = 2;
+    string accountId = 3;
+    float amount = 4;
+    string currency = 5;
+    string messageType = 6;
+    repeated TransactionDetails transactionDetails = 7;
+}
+
+message TransactionDetails {
+    string id = 1;
+    string transactionId = 2;
+    string name = 3;
+    string value = 4;
+}
