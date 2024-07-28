@@ -117,7 +117,6 @@ export class TransactionService {
       transactionRecord.status === TransactionStatus.PENDING &&
       transactionData.messageType === NativeMessageType.CLEARING
     ) {
-      data.cardLimit = transactionRecord.cardLimit - transactionData.amount;
       data.status = TransactionStatus.SUCCESS;
       await this.transactionRepository.update(
         transactionData.id,
